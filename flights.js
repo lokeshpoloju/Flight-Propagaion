@@ -44,9 +44,10 @@ function drawMap(){
 
 function drawMovement(){
 
+        currentTime++;
 	drawMap();
 	for(i = 0; i < arrflights.length; i++){  
-        if(arrflights[i].departureTime < currentTime){
+        if(arrflights[i].departureTime <= currentTime){
             arrflights[i].updateLocation();
 		    arrflights[i].draw();
         }
@@ -55,7 +56,6 @@ function drawMovement(){
 		}
 
     }
-        currentTime++;
 }
 
 
